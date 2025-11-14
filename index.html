@@ -1,154 +1,109 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Vkasanie</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vkasanie</title>
 
-<style>
-body {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-    overflow: hidden;
-    background: #000;
-    color: white;
-}
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-/* Видео */
-.video-bg {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: -3;
-}
+        body {
+            font-family: Arial, sans-serif;
+            color: white;
+            height: 100vh;
+            overflow: hidden;
+            background: #000;
+        }
 
-/* Туман контейнер */
-.fog-container {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    z-index: -1;
-    pointer-events: none;
-}
+        /* --- АНИМИРОВАННЫЙ ФОН (ТУМАН + СВЕТ) --- */
+        .bg {
+            position: fixed;
+            inset: 0;
+            background: radial-gradient(circle at 50% 40%, rgba(50,50,50,0.4), transparent 70%),
+                        radial-gradient(circle at 80% 70%, rgba(100,100,100,0.4), transparent 80%),
+                        radial-gradient(circle at 20% 80%, rgba(80,80,80,0.4), transparent 80%);
+            filter: blur(40px);
+            animation: moveFog 14s infinite alternate ease-in-out;
+            z-index: -3;
+        }
 
-/* Туман слои */
-.fog-layer {
-    position: absolute;
-    width: 200%;
-    height: 200%;
-    background: url("https://i.imgur.com/8fK4h4U.png") repeat;
-    opacity: 0.45;
-    filter: blur(35px);
-    animation: fogMove 90s linear infinite;
-}
+        @keyframes moveFog {
+            0% { transform: translate(-20px, -20px) scale(1.1); }
+            100% { transform: translate(20px, 20px) scale(1.3); }
+        }
 
-.fog-layer.layer2 {
-    opacity: 0.35;
-    filter: blur(45px);
-    animation: fogMove2 120s linear infinite reverse;
-}
+        /* --- ЛЁГКИЙ ДЫМ СПЕРЕДИ --- */
+        .fog {
+            position: fixed;
+            inset: 0;
+            background: url('https://i.imgur.com/4NJlwnR.png');
+            opacity: 0.18;
+            animation: fogMove 12s infinite linear;
+            background-size: cover;
+            filter: blur(3px);
+            z-index: -2;
+        }
 
-/* Анимация тумана */
-@keyframes fogMove {
-    from { transform: translate3d(-20%, -20%, 0); }
-    to   { transform: translate3d(20%, 20%, 0); }
-}
+        @keyframes fogMove {
+            from { transform: translateX(0); }
+            to { transform: translateX(-300px); }
+        }
 
-@keyframes fogMove2 {
-    from { transform: translate3d(20%, 20%, 0); }
-    to   { transform: translate3d(-20%, -20%, 0); }
-}
+        /* --- КОНТЕНТ В ЦЕНТРЕ --- */
+        .center-box {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            width: 90%;
+        }
 
-/* Контент */
-.content {
-    position: relative;
-    z-index: 2;
-    text-align: center;
-    padding: 20px;
-    animation: fadeIn 2s ease forwards;
-    opacity: 0;
-}
+        h1 {
+            font-size: 38px;
+            font-weight: 600;
+            text-shadow: 0 0 14px rgba(255,255,255,0.4);
+            margin-bottom: 25px;
+        }
 
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to   { opacity: 1; }
-}
+        .btn {
+            display: block;
+            width: 100%;
+            max-width: 320px;
+            margin: 10px auto;
+            padding: 15px;
+            background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(255,255,255,0.25);
+            border-radius: 14px;
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            backdrop-filter: blur(6px);
+            transition: 0.3s;
+        }
 
-.text-block {
-    font-size: 18px;
-    font-weight: bold;
-    white-space: pre-line;
-    text-shadow: 0 0 10px black;
-}
-
-/* Кнопка */
-.btn {
-    padding: 15px 40px;
-    border-radius: 10px;
-    font-size: 22px;
-    background: rgba(255, 255, 255, 0.25);
-    border: 1px solid rgba(255, 255, 255, 0.4);
-    color: white;
-    text-decoration: none;
-    display: inline-block;
-    margin-top: 20px;
-    backdrop-filter: blur(5px);
-    transition: .25s;
-}
-
-.btn:hover {
-    background: rgba(255,255,255,0.4);
-    transform: scale(1.05);
-}
-</style>
+        .btn:hover {
+            background: rgba(255,255,255,0.2);
+        }
+    </style>
 </head>
 
 <body>
+    <div class="bg"></div>
+    <div class="fog"></div>
 
-<!-- Фон видео -->
-<video autoplay loop muted playsinline class="video-bg">
-    <source src="public.mp4" type="video/mp4">
-</video>
+    <div class="center-box">
+        <h1>Vkasanie</h1>
 
-<!-- Туман -->
-<div class="fog-container">
-    <div class="fog-layer"></div>
-    <div class="fog-layer layer2"></div>
-</div>
-
-<!-- Контент -->
-<div class="content">
-    <div class="text-block">
-🔵🅱️🅰️🅿️🅰️🅾️🔵
-
-Zelenyj svet , tebe gorit  
-🔥Snimaj svoje sokroviśće…🎁  
-🔵PRIYATNOGO💙OTDYHA🔵  
-💡💡💡💡💡💡💡💡💡💡  
-
-🔵Aktualne miasta🔵  
-
-BYDGOSZCZ,  WARSZAWA,  
-WROCLAW,  KRAKOW,  
-RZESZOW,  KATOWICE,  
-LODZ,  GDANSK.  
-
-✨My na rynku bolee 3 let✨  
-
-👇🧿KONTAKT Z NAMI🧿👇  
-📎Opis/Praca📎  
-@wkasanie_administrator
+        <a class="btn" href="#">Telegram</a>
+        <a class="btn" href="#">Instagram</a>
+        <a class="btn" href="#">Контакт</a>
     </div>
-
-    <a class="btn" href="https://t.me/wkasanie_administrator">Telegram</a>
-</div>
 
 </body>
 </html>
