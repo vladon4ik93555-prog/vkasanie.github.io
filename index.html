@@ -6,7 +6,14 @@
     <title>Вкасание</title>
 
     <style>
-        /* Видео фон */
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Видео Фон */
         #bg-video {
             position: fixed;
             top: 50%;
@@ -21,7 +28,7 @@
             filter: blur(3px) brightness(0.7);
         }
 
-        /* Центровка */
+        /* Центр */
         .content {
             position: absolute;
             top: 50%;
@@ -87,16 +94,16 @@
             0% { opacity: 0; }
             100% { opacity: 1; }
         }
-    </style>
 
+    </style>
 </head>
+
 <body>
 
-    <!-- Фон -->
-    <!-- Фон -->
-<video autoplay muted loop playsinline id="bg-video">
-    <source src="public.mp4" type="video/mp4">
-</video>
+    <!-- Фоновое Видео -->
+    <video autoplay muted loop playsinline id="bg-video">
+        <source src="./public.mp4" type="video/mp4">
+    </video>
 
     <!-- Контент -->
     <div class="content">
