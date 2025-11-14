@@ -1,109 +1,129 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vkasanie</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vkasanie</title>
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        background: #000;
+        overflow: hidden;
+        color: white;
+    }
 
-        body {
-            font-family: Arial, sans-serif;
-            color: white;
-            height: 100vh;
-            overflow: hidden;
-            background: #000;
-        }
+    /* Видео фон */
+    .video-bg {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: -3;
+    }
 
-        /* --- АНИМИРОВАННЫЙ ФОН (ТУМАН + СВЕТ) --- */
-        .bg {
-            position: fixed;
-            inset: 0;
-            background: radial-gradient(circle at 50% 40%, rgba(50,50,50,0.4), transparent 70%),
-                        radial-gradient(circle at 80% 70%, rgba(100,100,100,0.4), transparent 80%),
-                        radial-gradient(circle at 20% 80%, rgba(80,80,80,0.4), transparent 80%);
-            filter: blur(40px);
-            animation: moveFog 14s infinite alternate ease-in-out;
-            z-index: -3;
-        }
+    /* Туман */
+    .fog {
+        position: fixed;
+        width: 200%;
+        height: 200%;
+        top: -50%;
+        left: -50%;
+        background: url("https://i.imgur.com/NTgF9kb.png");
+        opacity: 0.5;
+        animation: fogMove 40s linear infinite;
+        z-index: -2;
+    }
 
-        @keyframes moveFog {
-            0% { transform: translate(-20px, -20px) scale(1.1); }
-            100% { transform: translate(20px, 20px) scale(1.3); }
-        }
+    @keyframes fogMove {
+        from { transform: translateX(0); }
+        to { transform: translateX(50%); }
+    }
 
-        /* --- ЛЁГКИЙ ДЫМ СПЕРЕДИ --- */
-        .fog {
-            position: fixed;
-            inset: 0;
-            background: url('https://i.imgur.com/4NJlwnR.png');
-            opacity: 0.18;
-            animation: fogMove 12s infinite linear;
-            background-size: cover;
-            filter: blur(3px);
-            z-index: -2;
-        }
+    /* Контейнер */
+    .center {
+        position: absolute;
+        top: 20%;
+        left: 50%;
+        transform: translateX(-50%);
+        text-align: center;
+        width: 90%;
+    }
 
-        @keyframes fogMove {
-            from { transform: translateX(0); }
-            to { transform: translateX(-300px); }
-        }
+    /* Заголовок */
+    h1 {
+        font-size: 40px;
+        font-weight: 700;
+        text-shadow: 0px 0px 20px rgba(255,255,255,0.4);
+        margin-bottom: 40px;
+    }
 
-        /* --- КОНТЕНТ В ЦЕНТРЕ --- */
-        .center-box {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            text-align: center;
-            width: 90%;
-        }
+    /* Кнопка */
+    .btn {
+        display: block;
+        width: 100%;
+        max-width: 350px;
+        margin: 20px auto;
+        padding: 18px 0;
+        font-size: 22px;
+        color: white;
+        background: rgba(255,255,255,0.08);
+        border: 2px solid rgba(255,255,255,0.2);
+        border-radius: 20px;
+        backdrop-filter: blur(10px);
+        cursor: pointer;
+        transition: 0.3s;
+    }
 
-        h1 {
-            font-size: 38px;
-            font-weight: 600;
-            text-shadow: 0 0 14px rgba(255,255,255,0.4);
-            margin-bottom: 25px;
-        }
+    .btn:hover {
+        background: rgba(255,255,255,0.2);
+    }
 
-        .btn {
-            display: block;
-            width: 100%;
-            max-width: 320px;
-            margin: 10px auto;
-            padding: 15px;
-            background: rgba(255,255,255,0.08);
-            border: 1px solid rgba(255,255,255,0.25);
-            border-radius: 14px;
-            color: white;
-            text-decoration: none;
-            font-size: 18px;
-            backdrop-filter: blur(6px);
-            transition: 0.3s;
-        }
+    /* Контактный блок */
+    .contact-box {
+        display: none;
+        margin-top: 20px;
+        font-size: 20px;
+        line-height: 1.6;
+        background: rgba(0,0,0,0.5);
+        padding: 20px;
+        border-radius: 15px;
+    }
+</style>
 
-        .btn:hover {
-            background: rgba(255,255,255,0.2);
-        }
-    </style>
 </head>
-
 <body>
-    <div class="bg"></div>
-    <div class="fog"></div>
 
-    <div class="center-box">
-        <h1>Vkasanie</h1>
+<!-- Видео фон -->
+<video class="video-bg" autoplay muted loop>
+    <source src="public.mp4" type="video/mp4">
+</video>
 
-        <a class="btn" href="#">Telegram</a>
-        <a class="btn" href="#">Instagram</a>
-        <a class="btn" href="#">Контакт</a>
+<!-- Туман -->
+<div class="fog"></div>
+
+<!-- Контент -->
+<div class="center">
+    <h1>Vkasanie</h1>
+
+    <button class="btn" onclick="toggleContact()">Контакт</button>
+
+    <div id="contact" class="contact-box">
+        📦 ОПТ / СОТРУДНИЧЕСТВО 🧰<br>
+        ⚙️ <b>@wkasanie_administrator</b> ⚙️
     </div>
+</div>
+
+<script>
+function toggleContact() {
+    let box = document.getElementById("contact");
+    box.style.display = (box.style.display === "block") ? "none" : "block";
+}
+</script>
 
 </body>
 </html>
