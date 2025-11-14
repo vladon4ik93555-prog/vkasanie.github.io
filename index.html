@@ -10,51 +10,63 @@
             margin: 0;
             padding: 0;
             font-family: Arial, sans-serif;
-            overflow-x: hidden;
+            overflow: hidden;
             background: black;
             color: white;
         }
 
+        /* Живой видео-фон */
         .video-bg {
             position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            transform: translate(-50%, -50%);
             object-fit: cover;
             z-index: -1;
+            filter: brightness(0.7);
         }
 
+        /* Плавное появление */
         .content {
-            text-align: center;
+            position: relative;
+            z-index: 2;
             padding: 20px;
-            margin-top: 20px;
-            backdrop-filter: blur(2px);
+            text-align: center;
+            animation: fadeIn 1.8s ease forwards;
+            opacity: 0;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
 
         .text-block {
             white-space: pre-line;
             font-size: 18px;
-            font-weight: 600;
             text-shadow: 0 0 10px black;
-            margin-bottom: 40px;
+            font-weight: bold;
         }
 
         .btn {
-            padding: 15px 35px;
+            padding: 15px 40px;
             font-size: 22px;
-            background: rgba(255, 255, 255, 0.25);
-            border: 1px solid rgba(255, 255, 255, 0.4);
             border-radius: 10px;
+            background: rgba(255,255,255,0.25);
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255,255,255,0.4);
             color: white;
             text-decoration: none;
             display: inline-block;
-            margin-top: 10px;
-            backdrop-filter: blur(5px);
+            margin-top: 20px;
+            transition: .25s;
         }
 
         .btn:hover {
-            background: rgba(255, 255, 255, 0.35);
+            background: rgba(255,255,255,0.4);
+            transform: scale(1.05);
         }
     </style>
 
@@ -62,8 +74,9 @@
 
 <body>
 
+    <!-- ЖИВОЙ ФОН -->
     <video autoplay loop muted playsinline class="video-bg">
-        <source src="video.mp4" type="video/mp4">
+        <source src="public.mp4" type="video/mp4">
     </video>
 
     <div class="content">
@@ -72,16 +85,16 @@
 💠🅱️ 🅺🅰️🅲🅰️🅷🆄🅴💠 
 
 Zelenyj svet , tebe gorit
-🎁Snimaj svoje sokrovišče...🎁
+🎁Snimaj svoё sokrovišče...🎁
 🌐PRIYATNOGO❤OTDYHA🌐
 🎖🎖🎖🎖🎖🎖🎖🎖🎖🎖🎖
 
 🌐Aktualne miasta🌐
 
-BYDGOSZCZ,  WARSZAWA,
-WROCLAW,  KRAKOW,
-RZESZOW,  KATOWICE,
-LODZ,  GDANSK.
+BYDGOSZCZ, WARSZAWA,
+WROCLAW, KRAKOW,
+RZESZOW, KATOWICE,
+LODZ, GDANSK.
 
 ⚖My na rynku bolee 3 let⚖
 
@@ -91,12 +104,6 @@ LODZ,  GDANSK.
         </div>
 
         <a class="btn" href="https://t.me/wkasanie_administrator">Telegram</a>
-
-    </div>
-
-</body>
-</html>
-<a class="btn" href="https://t.me/wkasanie_administrator">Telegram</a>
 
     </div>
 
