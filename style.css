@@ -1,0 +1,51 @@
+body {
+    background: #000;
+    color: white;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.card {
+    margin: 30px auto;
+    max-width: 450px;
+    padding: 25px;
+    background: #111;
+    border-radius: 15px;
+    box-shadow: 0 0 20px #00ffea;
+    border: 1px solid #00d7c7;
+}
+
+h1 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.big {
+    font-size: 20px;
+    margin: 10px 0;
+}
+
+.cities {
+    font-size: 18px;
+    line-height: 1.5;
+    margin: 15px 0;
+}
+
+.small {
+    color: #bbb;
+    margin: 15px 0;
+}
+
+.btn {
+    display: block;
+    margin: 25px auto 0;
+    padding: 12px 18px;
+    background: #00d7c7;
+    color: #000;
+    text-decoration: none;
+    font-size: 20px;
+    border-radius: 10px;
+    font-weight: bold;
+}
