@@ -1,139 +1,79 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Vkasanie</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Визитка</title>
 
 <style>
     body {
         margin: 0;
         padding: 0;
-        font-family: Arial, sans-serif;
-        background: #000;
-        overflow: hidden;
+        height: 100vh;
+        background: url('public.mp4') no-repeat center center/cover;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
         color: white;
         text-align: center;
+        font-family: Arial, sans-serif;
+        backdrop-filter: blur(3px);
     }
 
-    /* Видео фон */
-    .video-bg {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        z-index: -3;
-    }
-
-    /* Туман */
-    .fog {
-        position: fixed;
-        width: 200%;
-        height: 200%;
-        top: -50%;
-        left: -50%;
-        background: url("https://i.imgur.com/NTgF9kb.png");
-        opacity: 0.5;
-        animation: fogMove 40s linear infinite;
-        z-index: -2;
-    }
-
-    @keyframes fogMove {
-        from { transform: translateX(0); }
-        to { transform: translateX(50%); }
-    }
-
-    /* Центральный блок */
-    .center {
-        position: absolute;
-        top: 20%;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 90%;
-    }
-
-    /* Описание */
     .description {
-        margin-top: 20px;
         font-size: 22px;
-        text-shadow: 0 0 10px rgba(255,255,255,0.5);
-        white-space: pre-line;
+        font-weight: bold;
+        margin-bottom: 30px;
+        padding: 0 20px;
     }
 
-    /* Кнопка */
-    .btn {
-        display: block;
-        width: 100%;
-        max-width: 350px;
-        margin: 20px auto;
-        padding: 18px 0;
-        font-size: 22px;
+    .contact-btn {
+        padding: 12px 28px;
+        font-size: 20px;
+        border: none;
+        border-radius: 12px;
+        background: rgba(255,255,255,0.15);
         color: white;
-        background: rgba(255,255,255,0.08);
-        border: 2px solid rgba(255,255,255,0.2);
-        border-radius: 20px;
         backdrop-filter: blur(10px);
         cursor: pointer;
         transition: 0.3s;
     }
-    .btn:hover {
-        background: rgba(255,255,255,0.2);
+
+    .contact-btn:hover {
+        background: rgba(255,255,255,0.25);
     }
 
-    /* Контакты — теперь ниже */
-    .contact-box {
-        margin-top: 140px;
-        display: none;
+    .contacts {
+        margin-top: 20px;
         font-size: 20px;
-        background: rgba(0,0,0,0.45);
-        padding: 18px;
-        border-radius: 15px;
-        line-height: 1.6;
-        width: 90%;
-        max-width: 350px;
-        margin-left: auto;
-        margin-right: auto;
+        display: none;
+        animation: fadeIn 0.4s ease;
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(10px); }
+        to { opacity: 1; transform: translateY(0); }
     }
 </style>
-
 </head>
+
 <body>
 
-<!-- Видео фон -->
-<video class="video-bg" autoplay muted loop>
-    <source src="public.mp4" type="video/mp4">
-</video>
-
-<!-- Туман -->
-<div class="fog"></div>
-
-<!-- Контент -->
-<div class="center">
-
-    <h1>Vkasanie</h1>
-
     <div class="description">
-        💠🅱️ 🅺🅰️🅲🅰️🅷🆄🅴💠  
-
-        𝗭𝗲𝗹ё𝗻𝘆𝗷 𝘀𝘃𝗲𝘁 , 𝘁𝗲𝗯𝗲 𝗴𝗼𝗿𝗶𝘁  
-        🎁𝗦𝗻𝗶𝗺𝗮𝗷 𝘀𝘃𝗼ё 𝘀𝗼𝗸𝗿𝗼𝘃𝗶𝘀𝗰𝗵𝗲...🎁  
-        🌐𝗣𝗥𝗜𝗬𝗮𝗧𝗡𝗢𝗚𝗢❤𝗢𝗧𝗗𝗬𝗛𝗔🌐  
+        📦 ОПТ / СОТРУДНИЧЕСТВО 🧰 <br>
+        ⚙️ @wkasanie_administrator ⚙️
     </div>
 
-    <button class="btn" onclick="toggleContact()">Контакт</button>
+    <button class="contact-btn" onclick="showContacts()">Контакты</button>
 
-    <div id="contact" class="contact-box">
-📦 ОПТ / СОТРУДНИЧЕСТВО 🧰  
-⚙️ @wkasanie_administrator ⚙️
+    <div class="contacts" id="contacts">
+        📞 Telegram: @wkasanie_administrator
     </div>
-</div>
 
 <script>
-function toggleContact() {
-    let box = document.getElementById("contact");
-    box.style.display = (box.style.display === "block") ? "none" : "block";
+function showContacts() {
+    document.getElementById('contacts').style.display = 'block';
 }
 </script>
 
