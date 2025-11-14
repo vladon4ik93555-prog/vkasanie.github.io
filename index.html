@@ -1,116 +1,19 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Вкасание</title>
-
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            overflow: hidden;
-            font-family: Arial, sans-serif;
-        }
-
-        /* Видео Фон */
-        #bg-video {
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            min-width: 100%;
-            min-height: 100%;
-            width: auto;
-            height: auto;
-            z-index: -1;
-            transform: translate(-50%, -50%);
-            object-fit: cover;
-            filter: blur(3px) brightness(0.7);
-        }
-
-        /* Центр */
-        .content {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            text-align: center;
-            color: white;
-            opacity: 0;
-            animation: fadeIn 2s ease forwards;
-        }
-
-        h1 {
-            font-size: 48px;
-            margin-bottom: 10px;
-            opacity: 0;
-            animation: slideDown 1.5s ease forwards;
-        }
-
-        p {
-            font-size: 20px;
-            margin-bottom: 25px;
-            opacity: 0;
-            animation: slideUp 1.8s ease forwards;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 12px 26px;
-            background: rgba(255,255,255,0.15);
-            border: 1px solid white;
-            border-radius: 12px;
-            color: white;
-            text-decoration: none;
-            font-size: 18px;
-            backdrop-filter: blur(4px);
-            transition: 0.3s;
-            opacity: 0;
-            animation: fadeBtn 2s ease forwards;
-        }
-
-        .btn:hover {
-            background: rgba(255,255,255,0.3);
-            transform: scale(1.05);
-        }
-
-        /* Анимации */
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
-        @keyframes slideDown {
-            0% { transform: translate(-50%, -60%); opacity: 0; }
-            100% { transform: translate(-50%, -50%); opacity: 1; }
-        }
-
-        @keyframes slideUp {
-            0% { transform: translate(-50%, -40%); opacity: 0; }
-            100% { transform: translate(-50%, -50%); opacity: 1; }
-        }
-
-        @keyframes fadeBtn {
-            0% { opacity: 0; }
-            100% { opacity: 1; }
-        }
-
-    </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Визитка</title>
+<link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
-
-    <!-- Фоновое Видео -->
-    <video autoplay muted loop playsinline id="bg-video">
-        <source src="./public.mp4" type="video/mp4">
-    </video>
-
-    <!-- Контент -->
-    <div class="content">
-        <h1>Вкасание</h1>
-        <p>Персональная визитка</p>
-        <a href="#" class="btn">Связаться</a>
+<div class="wrapper">
+    <h1>Моя визитка</h1>
+    <div class="buttons">
+        <a href="#" class="btn">Telegram</a>
+        <a href="#" class="btn">Instagram</a>
+        <a href="#" class="btn">WhatsApp</a>
     </div>
-
+</div>
 </body>
 </html>
