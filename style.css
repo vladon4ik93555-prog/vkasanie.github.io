@@ -1,93 +1,60 @@
 body {
-    background: #000;
-    color: white;
-    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    text-align: center;
-}
-
-.card {
-    margin: 30px auto;
-    max-width: 450px;
-    padding: 25px;
     background: #111;
-    border-radius: 15px;
-    box-shadow: 0 0 20px #00ffea;
-    border: 1px solid #00d7c7;
+    color: #fff;
+    font-family: Arial, sans-serif;
 }
 
-h1 {
-    font-size: 28px;
-    margin-bottom: 20px;
+.wrapper {
+    text-align: center;
+    padding: 25px;
 }
 
-.big {
-    font-size: 20px;
-    margin: 10px 0;
+.shop-name {
+    font-size: 32px;
+    margin-bottom: 15px;
+}
+
+.title {
+    margin-top: 5px;
 }
 
 .cities {
-    font-size: 18px;
-    line-height: 1.5;
-    margin: 15px 0;
+    margin: 5px 0 10px 0;
+    line-height: 1.4;
 }
 
-.small {
-    color: #bbb;
-    margin: 15px 0;
+.experience {
+    opacity: 0.9;
+    margin-bottom: 20px;
 }
 
-.btn {
-    display: block;
-    margin: 25px auto 0;
-    padding: 12px 18px;
-    background: #00d7c7;
-    color: #000;
-    text-decoration: none;
-    font-size: 20px;
-    border-radius: 10px;
+.contact-btn {
+    padding: 12px 20px;
+    background: #ff9933;
+    border: none;
+    border-radius: 12px;
+    font-size: 17px;
     font-weight: bold;
-}
-/* ФОН: живой туман */
-body {
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden;
-    background: #000;
-}
-
-/* Контейнер под туман */
-.fog-container {
-    position: fixed;
-    top: 0;
-    left: 0;
+    cursor: pointer;
     width: 100%;
-    height: 100%;
-    pointer-events: none;
-    overflow: hidden;
-    z-index: -1;
+    max-width: 260px;
+    margin: 10px auto;
 }
 
-/* Слои тумана */
-.fog-layer {
-    position: absolute;
-    width: 200%;
-    height: 200%;
-    background: url("https://i.imgur.com/8fK4h4U.png") repeat; /* текстура тумана */
-    opacity: 0.45;
-    animation: fogMove 60s linear infinite;
-    filter: blur(30px);
+.contact-btn:hover {
+    background: #ffaa44;
 }
 
-.fog-layer.layer2 {
-    opacity: 0.35;
-    animation-duration: 120s;
-    animation-direction: reverse;
-    filter: blur(45px);
+.contacts {
+    display: none;
+    background: #1a1a1a;
+    padding: 15px;
+    border-radius: 12px;
+    margin-top: 15px;
 }
 
-@keyframes fogMove {
-    from { transform: translate3d(-20%, -20%, 0); }
-    to   { transform: translate3d(20%, 20%, 0); }
+.contacts p {
+    margin: 5px 0;
 }
