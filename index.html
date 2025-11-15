@@ -1,39 +1,54 @@
-<!-- Полный обновлённый код --><html>
+<!DOCTYPE html>
+<html lang="ru">
 <head>
-<meta charset="UTF-8" />
-<title>Визитка</title>
-<style>
-body {
-    margin: 0;
-    padding: 0;
-    background: url('bg.jpg') no-repeat center center/cover;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    font-family: Arial;
-    text-align: center;
-}#opisanie { width: 90%; font-size: 20px; line-height: 1.45; font-weight: 500; margin-bottom: 160px; text-align: center; }
-
-.kontakt-knopka { padding: 14px 34px; font-size: 22px; border: none; border-radius: 14px; background: rgba(255,255,255,0.15); color: white; backdrop-filter: blur(10px); cursor: pointer; transition: 0.3s; position: absolute; bottom: 60px; }
-
-#kontakti { display: none; margin-top: 20px; font-size: 20px; animation: fadeIn 0.4s ease; }
-
-@keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } } </style>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>B KACAHUE</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-<body><div id="opisanie">
-💠🅱️ 🅺🅰️🅲🅰️🅷🆄🅴💠<br><br>
-Zelёnyj svet , tebe gorit🔥<br>
-Snimaj svoe sokrovische...🎁<br>
-PRIYATNOGO❤OTDYHA 🌐<br><br>
-🌐Aktualne miasta🌐<br><br>
-BYDGOSZCZ, WARSZAWA,<br>
-WROCLAW, KRAKOW,<br>
-RZESZOW, KATOWICE,<br>
-LODZ, GDANSK.<br><br>
-⚖My na rynku bolee 3 let⚖<br><br>
-🗂️Sokhrani, chtoby ne poteryat nas. 🗂️<br>
-</
+<body>
+
+<div class="wrapper">
+
+    <!-- Название магазина -->
+    <h1 class="shop-name">✨ ™️B KACAHUE™️ ✨</h1>
+
+    <!-- Города -->
+    <h2 class="title">🌐 𝗔𝗸𝘁𝘂𝗮𝗹𝗻𝗲 𝗺𝗶𝗮𝘀𝘁𝗮 🌐</h2>
+
+    <p class="cities">
+        𝔹𝕐𝔻𝔾𝕆𝕊ℤℂ • 𝕎𝔸ℝ𝕊ℤ𝔸𝕎𝔸 • 𝕎ℝ𝕆ℂ𝕃𝔸𝕎 <br>
+        𝕂ℝ𝔸𝕂𝕆𝕎 • ℝℤ𝔼𝕊ℤ𝕆𝕎 • 𝕂𝔸𝕋𝕆𝕎𝕀ℂ𝔼 <br>
+        𝕃𝕆𝔻ℤ • 𝔾𝔻𝔸ℕ𝕊𝕂 🌇🌇🌇
+    </p>
+
+    <p class="experience">↘️ Мы на рынке более 3 лет 🔥</p>
+
+    <!-- Кнопка -->
+    <button class="contact-btn" onclick="toggleContacts()">📲 Связаться</button>
+
+    <!-- Контакты -->
+    <div id="contacts" class="contacts">
+
+        <h3>📡 Каналы</h3>
+
+        <p>📰 NEWS-BKACAHUE</p>
+        <p>💬 CHAT-POLAND</p>
+        <p>⭐ REVIEWS</p>
+
+        <h3>📦 Опт / Сотрудничество</h3>
+
+        <p>👤 @wkasanie_administrator</p>
+    </div>
+
+</div>
+
+<script>
+function toggleContacts() {
+    const block = document.getElementById("contacts");
+    block.style.display = block.style.display === "none" ? "block" : "none";
+}
+</script>
+
+</body>
+</html>
