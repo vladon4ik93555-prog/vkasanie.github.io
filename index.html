@@ -1,43 +1,39 @@
-<!DOCTYPE html><html lang="ru">
+<!-- Полный обновлённый код --><html>
 <head>
 <meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Визитка</title>
 <style>
 body {
     margin: 0;
     padding: 0;
-    background: #000;
-    color: #fff;
-    font-family: Arial, sans-serif;
+    background: url('bg.jpg') no-repeat center center/cover;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-family: Arial;
     text-align: center;
-}.описание { text-align: center; width: 90%; margin: 0 auto; font-size: 18px; line-height: 1.4; font-weight: 500; margin-top: 40px; margin-bottom: 70px; }
+}#opisanie { width: 90%; font-size: 20px; line-height: 1.45; font-weight: 500; margin-bottom: 160px; text-align: center; }
 
-.контакт-кнопка { padding: 14px 28px; width: 200px; margin: 20px auto; border: none; border-radius: 14px; background: rgba(255, 255, 255, 0.2); color: white; font-size: 20px; font-weight: 600; cursor: pointer; }
+.kontakt-knopka { padding: 14px 34px; font-size: 22px; border: none; border-radius: 14px; background: rgba(255,255,255,0.15); color: white; backdrop-filter: blur(10px); cursor: pointer; transition: 0.3s; position: absolute; bottom: 60px; }
 
-#контакты { display: none; margin-top: 20px; font-size: 20px; } </style>
+#kontakti { display: none; margin-top: 20px; font-size: 20px; animation: fadeIn 0.4s ease; }
+
+@keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } } </style>
 
 </head>
-<body><div class="описание">
-💠🅱️ 🅺🅰️🅲🅰️🅷🆄🅴💠 <br><br>
-Zelёnyj svet , tebe gorit<br>
-🎁Snimaй svoё sokrovische...🎁<br>
-🌐PRIYATNOGO❤OTDYHA🌐<br>
-🎖🎖🎖🎖🎖🎖🎖🎖🎖🎖🎖<br><br>
+<body><div id="opisanie">
+💠🅱️ 🅺🅰️🅲🅰️🅷🆄🅴💠<br><br>
+Zelёnyj svet , tebe gorit🔥<br>
+Snimaj svoe sokrovische...🎁<br>
+PRIYATNOGO❤OTDYHA 🌐<br><br>
 🌐Aktualne miasta🌐<br><br>
 BYDGOSZCZ, WARSZAWA,<br>
 WROCLAW, KRAKOW,<br>
 RZESZOW, KATOWICE,<br>
 LODZ, GDANSK.<br><br>
-🌇🌇🌇🌇🌇🌇🌇🌇🌇🌇<br><br>
 ⚖My na rynku bolee 3 let⚖<br><br>
-🗂️Sohraни, chtob ne poteryat nas. 🗂️<br>
-</div><button class="контакт-кнопка" onclick="toggleContacts()">Связаться</button>
-
-<div id="контакты">📦ОПТ/СОТРУДНИЧЕСТВО🧰<br>⚙️@wkasanie_administrator⚙️</div><script>
-function toggleContacts() {
-    let block = document.getElementById("контакты");
-    block.style.display = block.style.display === "block" ? "none" : "block";
-}
-</script></body>
-</html>
+🗂️Sokhrani, chtoby ne poteryat nas. 🗂️<br>
+</
