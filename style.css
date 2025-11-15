@@ -1,51 +1,60 @@
 body {
-    background-color: #111;
-    color: #fff;
+    margin: 0;
+    background: black;
+    color: white;
     font-family: Arial, sans-serif;
     text-align: center;
+}
+
+.container {
     padding: 20px;
 }
 
-/* --- АНИМАЦИИ --- */
-.fade-in {
-    animation: fadeIn 1.2s ease forwards;
-    opacity: 0;
+.title {
+    font-size: 28px;
+    margin-bottom: 20px;
 }
 
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
+.info p {
+    margin: 4px 0;
+    font-size: 18px;
 }
 
-.sparkle {
-    animation: sparkle 1.6s infinite ease-in-out;
+.small {
+    margin-top: 12px;
+    font-size: 15px;
+    opacity: 0.8;
 }
 
-@keyframes sparkle {
-    0% { opacity: 1; transform: scale(1); }
-    50% { opacity: 0.4; transform: scale(1.15); }
-    100% { opacity: 1; transform: scale(1); }
+button {
+    margin-top: 18px;
+    padding: 12px 28px;
+    font-size: 18px;
+    background: #ffffff15;
+    border: 2px solid white;
+    color: white;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: 0.2s;
 }
 
-.button-pulse {
-    animation: pulse 2.2s infinite;
+button:hover {
+    background: white;
+    color: black;
 }
 
-@keyframes pulse {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.03); }
-    100% { transform: scale(1); }
+.contacts {
+    margin-top: 30px;
+    font-size: 18px;
 }
 
-/* --- КНОПКА --- */
-.btn {
-    display: inline-block;
-    margin-top: 25px;
-    padding: 15px 28px;
-    background-color: #ff9f34;
-    border-radius: 16px;
-    font-size: 22px;
-    color: #000;
-    font-weight: bold;
-    text-decoration: none;
+.video-title {
+    margin-top: 40px;
+    font-size: 24px;
+}
+
+.video {
+    width: 100%;
+    margin-top: 10px;
+    border-radius: 12px;
 }
