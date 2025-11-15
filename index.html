@@ -1,101 +1,43 @@
-<!DOCTYPE html>
-<html lang="ru">
+<!DOCTYPE html><html lang="ru">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Визитка</title>
-
 <style>
-    body {
-        margin: 0;
-        padding: 0;
-        height: 100vh;
-        background: url('public.mp4') no-repeat center center/cover;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        color: white;
-        font-family: Arial, sans-serif;
-        text-align: center;
-        backdrop-filter: blur(3px);
-    }
+body {
+    margin: 0;
+    padding: 0;
+    background: #000;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    text-align: center;
+}.описание { text-align: center; width: 90%; margin: 0 auto; font-size: 18px; line-height: 1.4; font-weight: 500; margin-top: 40px; margin-bottom: 70px; }
 
-    .description {
-        text-align: center;
-        width: 90%;
-        margin: 0 auto;
-        font-size: 20px;
-        line-height: 1.45;
-        font-weight: 500;
-        margin-bottom: 150px; /* чтобы текст был выше кнопки */
-    }
+.контакт-кнопка { padding: 14px 28px; width: 200px; margin: 20px auto; border: none; border-radius: 14px; background: rgba(255, 255, 255, 0.2); color: white; font-size: 20px; font-weight: 600; cursor: pointer; }
 
-    .contact-btn {
-        padding: 14px 32px;
-        font-size: 22px;
-        border: none;
-        border-radius: 14px;
-        background: rgba(255,255,255,0.15);
-        color: white;
-        backdrop-filter: blur(10px);
-        cursor: pointer;
-        transition: 0.3s;
-        position: absolute;
-        bottom: 60px; /* кнопка ниже */
-    }
+#контакты { display: none; margin-top: 20px; font-size: 20px; } </style>
 
-    .contact-btn:hover {
-        background: rgba(255,255,255,0.25);
-    }
-
-    .contacts {
-        position: absolute;
-        bottom: 10px;
-        font-size: 20px;
-        display: none;
-        animation: fadeIn 0.4s ease;
-    }
-
-    @keyframes fadeIn {
-        from { opacity: 0; transform: translateY(10px); }
-        to { opacity: 1; transform: translateY(0); }
-    }
-</style>
 </head>
+<body><div class="описание">
+💠🅱️ 🅺🅰️🅲🅰️🅷🆄🅴💠 <br><br>
+Zelёnyj svet , tebe gorit<br>
+🎁Snimaй svoё sokrovische...🎁<br>
+🌐PRIYATNOGO❤OTDYHA🌐<br>
+🎖🎖🎖🎖🎖🎖🎖🎖🎖🎖🎖<br><br>
+🌐Aktualne miasta🌐<br><br>
+BYDGOSZCZ, WARSZAWA,<br>
+WROCLAW, KRAKOW,<br>
+RZESZOW, KATOWICE,<br>
+LODZ, GDANSK.<br><br>
+🌇🌇🌇🌇🌇🌇🌇🌇🌇🌇<br><br>
+⚖My na rynku bolee 3 let⚖<br><br>
+🗂️Sohraни, chtob ne poteryat nas. 🗂️<br>
+</div><button class="контакт-кнопка" onclick="toggleContacts()">Связаться</button>
 
-<body>
-
-<div class="description">
-    💠🅱️ 🅺🅰️🅲🅰️🅷🆄🅴💠<br><br>
-
-    𝗭𝗲𝗹ё𝗻𝘆𝗷 𝘀𝘃𝗲𝘁 , 𝘁𝗲𝗯𝗲 𝗴𝗼𝗿𝗶𝘁<br>
-    🎁𝗦𝗻𝗶𝗺𝗮𝗷 𝘀𝘃𝗼ё 𝘀𝗼𝗸𝗿𝗼𝘃𝗶𝘀𝗰𝗵𝗲...🎁<br>
-    🌐𝗣𝗥𝗜𝗬𝗔𝗧𝗡𝗢𝗚𝗢❤𝗢𝗧𝗗𝗬𝗛𝗔🌐<br><br>
-
-    🌐𝗔𝗸𝘁𝘂𝗮𝗹𝗻𝗲 𝗺𝗶𝗮𝘀𝘁𝗮🌐<br>
-    𝔹𝕐𝔻𝔾𝕆𝕊ℤℂ, 𝕎𝔸ℝ𝕊ℤ𝔸𝕎𝔸,<br>
-    𝕎ℝ𝕆ℂ𝕃𝔸𝕎, 𝕂ℝ𝔸𝕂𝕆𝕎,<br>
-    ℝℤ𝔼𝕊ℤ𝕆𝕎, 𝕂𝔸𝕋𝕆𝕎𝕀ℂ𝔼,<br>
-    𝕃𝕆𝔻ℤ, 𝔾𝔻𝔸ℕ𝕊𝕂.<br><br>
-
-    ⚖𝗠𝘆 𝗻𝗮 𝗿𝘆𝗻𝗸𝘂 𝗯𝗼𝗹𝗲𝗲 3 𝗹𝗲𝘁⚖<br>
-    🗂️Сохрани, чтоб не потерять нас. 🗂️
-</div>
-
-<button class="contact-btn" onclick="showContacts()">Контакты</button>
-
-<div class="contacts" id="contacts">
-    📦 ОПТ / СОТРУДНИЧЕСТВО<br>
-    🧰 @wkasanie_administrator
-</div>
-
-<script>
-    function showContacts() {
-        const block = document.getElementById("contacts");
-        block.style.display = "block";
-    }
-</script>
-
-</body>
+<div id="контакты">📦ОПТ/СОТРУДНИЧЕСТВО🧰<br>⚙️@wkasanie_administrator⚙️</div><script>
+function toggleContacts() {
+    let block = document.getElementById("контакты");
+    block.style.display = block.style.display === "block" ? "none" : "block";
+}
+</script></body>
 </html>
