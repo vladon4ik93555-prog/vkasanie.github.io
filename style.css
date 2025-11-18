@@ -1,60 +1,27 @@
-body {
-    margin: 0;
-    background: black;
-    color: white;
-    font-family: Arial, sans-serif;
-    text-align: center;
-}
+body { margin: 0; background: black; color: white; font-family: Arial, sans-serif; text-align: center; }
 
-.container {
-    padding: 20px;
-}
+.container { padding: 20px; }
 
-.title {
-    font-size: 28px;
-    margin-bottom: 20px;
-}
+.title { font-size: 28px; margin-bottom: 20px; }
 
-.info p {
-    margin: 4px 0;
-    font-size: 18px;
-}
+.info p { margin: 6px 0; font-size: 20px; }
 
-.small {
-    margin-top: 12px;
-    font-size: 15px;
-    opacity: 0.8;
-}
+.nav-link { color: white; text-decoration: none; font-weight: bold; transition: 0.2s; }
 
-button {
-    margin-top: 18px;
-    padding: 12px 28px;
-    font-size: 18px;
-    background: #ffffff15;
-    border: 2px solid white;
-    color: white;
-    border-radius: 12px;
-    cursor: pointer;
-    transition: 0.2s;
-}
+.nav-link:hover { color: #888; }
 
-button:hover {
-    background: white;
-    color: black;
-}
+.small { margin-top: 12px; font-size: 15px; opacity: 0.8; }
 
-.contacts {
-    margin-top: 30px;
-    font-size: 18px;
-}
+.admin-btn { padding: 6px 14px; background: #ffffff20; border: 1px solid white; border-radius: 10px; color: white; cursor: pointer; font-size: 14px; margin-bottom: 6px; }
 
-.video-title {
-    margin-top: 40px;
-    font-size: 24px;
-}
+.hidden-admin { display: none; opacity: 0.7; font-size: 14px; }
 
-.video {
-    width: 100%;
-    margin-top: 10px;
-    border-radius: 12px;
-}
+#contactBtn { margin-top: 18px; padding: 12px 28px; font-size: 18px; background: #ffffff15; border: 2px solid white; color: white; border-radius: 12px; cursor: pointer; transition: 0.2s; }
+
+#contactBtn:hover { background: white; color: black; }
+
+.contacts { margin-top: 30px; font-size: 18px; }
+
+.video-title { margin-top: 40px; font-size: 24px; }
+
+.video { width: 100%; margin-top: 10px; border-radius: 12px; }
