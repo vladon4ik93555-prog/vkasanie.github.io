@@ -1,55 +1,41 @@
-<!DOCTYPE html>
-<html lang="ru">
+<!DOCTYPE html><html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>™️B KACAHUE™️</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body><div class="container">
 
-    <div class="container">
+    <h1 class="title">™️ B KACAHUE ™️</h1>
 
-        <!-- Верхний заголовок -->
-        <h1 class="title">™️ B KACAHUE ™️</h1>
+    <div class="info">
+        <p><a href="#" class="nav-link">📰 NEWS — BKACAHUE</a></p>
+        <p><a href="#" class="nav-link">💬 CHAT — POLAND</a></p>
+        <p><a href="#" class="nav-link">⭐ REVIEWS</a></p>
 
-        <!-- Основной текст -->
-        <div class="info">
-            <p>📰 NEWS — BKACAHUE</p>
-            <p>💬 CHAT — POLAND</p>
-            <p>⭐ REVIEWS</p>
-
-            <p class="small">
-                📦 Опт / Сотрудничество 🧰<br>
-                @wkasanie_administrator
-            </p>
-        </div>
-
-        <!-- Кнопка -->
-        <button id="contactBtn">📲 Связаться</button>
-
-        <!-- Блок контактов -->
-        <div id="contacts" class="contacts">
-            <p>📡 Telegram канал 1</p>
-            <p>📡 Telegram канал 2</p>
-            <p>📡 Telegram канал 3</p>
-            <p>👤 Аккаунт</p>
-        </div>
-
-        <!-- Блок видео -->
-        <h2 class="video-title">🎥 Видео</h2>
-
-        <video class="video" autoplay muted loop playsinline>
-            <source src="public.mp4" type="video/mp4">
-        </video>
-
+        <p class="small">
+            <button class="admin-btn">📦 Опт / Сотрудничество 🧰</button><br>
+            <span class="hidden-admin">@wkasanie_administrator</span>
+        </p>
     </div>
+
+    <button id="contactBtn">📲 Контакты</button>
+
+    <div id="contacts" class="contacts">
+    </div>
+
+    <h2 class="video-title"></h2>
+
+    <video class="video" autoplay muted loop playsinline>
+        <source src="public.mp4" type="video/mp4">
+    </video>
+
+</div>
 
 <script>
     document.getElementById("contactBtn").addEventListener("click", () => {
         document.getElementById("contacts").scrollIntoView({ behavior: "smooth" });
     });
-</script>
-
-</body>
+</script></body>
 </html>
