@@ -1,27 +1,80 @@
-body { margin: 0; background: black; color: white; font-family: Arial, sans-serif; text-align: center; }
+body {
+    background-color: #0d0d0d;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 20px;
+}
 
-.container { padding: 20px; }
+/* --- АНІМАЦИИ --- */
+.fade-in {
+    animation: fadeIn 1.2s ease forwards;
+    opacity: 0;
+}
 
-.title { font-size: 28px; margin-bottom: 20px; }
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
 
-.info p { margin: 6px 0; font-size: 20px; }
+.button-pulse {
+    animation: pulse 2.2s infinite;
+}
 
-.nav-link { color: white; text-decoration: none; font-weight: bold; transition: 0.2s; }
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
 
-.nav-link:hover { color: #888; }
+/* ГЛАВНАЯ КНОПКА */
+.btn {
+    background-color: #ff9f34;
+    border-radius: 16px;
+    padding: 16px 28px;
+    font-size: 22px;
+    color: #000;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+}
 
-.small { margin-top: 12px; font-size: 15px; opacity: 0.8; }
+/* --- DROPDOWN --- */
+.dropdown {
+    position: relative;
+    display: inline-block;
+    margin-top: 25px;
+}
 
-.admin-btn { padding: 6px 14px; background: #ffffff20; border: 1px solid white; border-radius: 10px; color: white; cursor: pointer; font-size: 14px; margin-bottom: 6px; }
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #1a1a1a;
+    min-width: 240px;
+    border-radius: 14px;
+    padding: 14px;
+    text-align: left;
+    box-shadow: 0 0 15px rgba(0,0,0,0.6);
+    z-index: 10;
+    left: 50%;
+    transform: translateX(-50%);
+}
 
-.hidden-admin { display: none; opacity: 0.7; font-size: 14px; }
+.dropdown-content p {
+    margin: 0 0 6px 0;
+    color: #fff;
+    font-size: 18px;
+}
 
-#contactBtn { margin-top: 18px; padding: 12px 28px; font-size: 18px; background: #ffffff15; border: 2px solid white; color: white; border-radius: 12px; cursor: pointer; transition: 0.2s; }
+.dropdown-content a {
+    color: #4aa3ff;
+    font-size: 18px;
+    text-decoration: none;
+    font-weight: bold;
+}
 
-#contactBtn:hover { background: white; color: black; }
-
-.contacts { margin-top: 30px; font-size: 18px; }
-
-.video-title { margin-top: 40px; font-size: 24px; }
-
-.video { width: 100%; margin-top: 10px; border-radius: 12px; }
+/* Показывать подменю при нажатии */
+.dropdown:active .dropdown-content,
+.dropdown:hover .dropdown-content {
+    display: block;
+}
